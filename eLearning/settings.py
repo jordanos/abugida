@@ -26,7 +26,7 @@ SECRET_KEY = '(=^p-^@y#nmk!eys1gj(*2t4j=qx=i6ysyp(&5g#jup3ni^i&i'
 DEBUG = True
 HOSTED_URL = ""
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['abugida.herokuapp.com']
 
 
 # Application definition
@@ -120,6 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
