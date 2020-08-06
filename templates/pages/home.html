@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block content %}     
+  <div class="container-fluid mt-5">
+
+
+    <!-- Mobile-sidebar -->
+    <div id="sidebar-wrapper" class="bg-dark mt-4">
+      <ul style="color: aliceblue;">
+        <li>1</li>
+        <li>2</li>
+      </ul>
+    </div>
+
+    <!-- main-content -->
+      
+    <div class="row">
+      
+      <!-- Desktop-sidebar -->
+      <div id="desktop-sidebar" class="col-lg-2 p-1 mt-2">
+        
+          <div class="scroll-area-sidebar">
+              <perfect-scrollbar class="ps-show-limits">
+                  <div style="position: static;" class="ps ps--active-y">
+                      <div class="ps-content">
+                        
+                        <ul class="parent list-group p-0" id="list-sidebar">
+                          <li class="list-group-item list-group-item-action"> Music production 
+                            <ul class="child list-group p-0">
+                              <li class="list-group-item list-group-item-action"><a href="/category=Music_Production&tag=tutorial&level=Beginner&page=1" data-target="">Tutorials</a></li>
+                              <li class="list-group-item list-group-item-action"><a href="/category=Music_Production&tag=tutorial&level=Beginner&page=1" data-target=""> Plugins </a></li>
+                              <li class="list-group-item list-group-item-action"><a href="/category=Music_Production&tag=tutorial&level=Beginner&page=1" data-target=""> DAW </a></li>
+                              <li class="list-group-item list-group-item-action"><a href="/category=Music_Production&tag=tutorial&level=Beginner&page=1" data-target=""> Soundpacks </a></li>
+                            </ul>
+                          </li>
+                          <li class="list-group-item list-group-item-action"> Programming
+                            <ul class="child list-group p-0">
+                              <li class="list-group-item list-group-item-action"><a href="/category=Programming&tag=tutorial&level=Beginner&page=1" data-target=""> Tutorial </a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                        
+                      </div>
+                  </div>
+              </perfect-scrollbar>
+          </div>
+        
+      </div>
+
+      <!-- Main Products list -->
+      <div class="col-md-12 col-lg-7 container-fluid mt-2">
+         
+        <div id="level-info" class=""></div>
+        <div id="product-list" class="mt-2"></div>
+        <div id="watch-more" class="d-flex justify-content-center mt-2"></div>
+        
+      </div>
+
+      <!-- Desktop-cart -->
+      <div id="desktop-cart-display" class="col-lg-3 p-0 bg-white mt-2">
+        <div class="row d-flex container">
+            <div class="card-hover-shadow-2x mb-0 card w-100">
+              <div class="card-header-tab card-header">
+                  <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-shopping-cart fa-lg" style="color: #007bff;"></i>&nbsp; List</div>
+              </div>
+              <div class="scroll-area-sm">
+                  <perfect-scrollbar class="ps-show-limits">
+                      <div style="position: static;" class="ps ps--active-y">
+                          <div class="ps-content">
+                              <ul class="list-group list-group-flush">
+                                <div id="cart-desktop">                                           
+                                  
+
+                              </ul>
+                          </div>
+                      </div>
+                  </perfect-scrollbar>
+              </div>
+              <div class="d-block text-left card-footer p-1">
+                <p>Total size: <p id="total-size" class="size-sm"></p> </p>
+                <p>Total price: <p id="total-price" class="size-sm"></p> </p>
+              </div>
+              <div class="d-block text-right card-footer">
+                <button class="mr-2 btn btn-link btn-sm">Cancel</button><button class="btn btn-primary">Order</button></div>
+            </div>
+        </div>
+      </div>
+    </div>
+             
+
+    <!-- Mobile-contents -->
+    <div id="mobile-cart-display" class="moile-cart-footer">
+
+          <div id="cart-mobile" class="container-fluid" style="display: none;">
+
+              <div class="row d-flex container">
+                <div class="card-hover-shadow-2x mb-0 card w-100">
+                  <div class="card-header-tab card-header">
+                      <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-tasks"></i>&nbsp;Cart List</div>
+                  </div>
+                  <div class="scroll-area-sm">
+                      <perfect-scrollbar class="ps-show-limits">
+                          <div style="position: static;" class="ps ps--active-y">
+                              <div class="ps-content">
+                                  <ul class="list-group list-group-flush">
+                                    <div id="cart-mob-box">                                           
+                                      
+
+                                  </ul>
+                              </div>
+                          </div>
+                      </perfect-scrollbar>
+                  </div>
+                  <div class="d-block text-right card-footer"><button class="mr-2 btn btn-link btn-sm">Cancel</button><button class="btn btn-primary">Order</button></div>
+                </div>
+            </div>
+
+          </div>
+
+        <div class="d-flex justify-content-center">
+          <button id="btnCart" class="btn btn-success" type="button" name="button" onclick="showCart()">Cart(0)</button>
+        </div>
+    </div>  
+  </div>
+{% endblock %}

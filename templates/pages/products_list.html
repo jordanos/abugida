@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}     
+<div class="col-md-12 col-lg-7 container-fluid">
+               
+  <div id="level-info" class="">
+    {% if tag == "tutorial" %}
+      <div class="btn-group" role="group" aria-label="Basic example" style="width: 100%;">
+        {% for lev in level %}
+        <button type="button" class="btn btn-secondary" style="background-color: #666666;" value="{{ lev.link }}" onclick="levelClick(this.value)"> {{ lev.name }} </button>
+        {% endfor %}
+      </div>
+    {% else %}
+      <h1>Nothing for now</h1>
+    {% endif %}
+  </div>
+  <div id="product-list" class="mt-2">
+    {% for product in response %}
+      <ul class="product list-group shadow mt-3" style="list-style-type:none;">               
+        <li class="list-group-product">
+          <div class="media align-products-lg-center flex-column flex-lg-row p-3">
+            <img src="{{ product.image }}" value="http://localhost:8000/product=1" alt="Generic placeholder image" class="mt-2 mr-lg-5 order-1 order-lg-1 img-fluid w-25" onclick="getProduct({{product.id}})">         
+            <div class="media-body order-2 order-lg-2">
+              <h5 class="pd-name mt-1 font-weight-bold mb-2"><a href="/product={{ product.id }}">{{ product.name }}</a></h5>
+              <p class="font-italic text-muted mb-0 small">{{ product.s_desc_en|linebreaksbr }}</p> 
+              <div class="d-flex align-products-center mt-1" style="display: inline-block;">
+                <h6 class="pd-size " style="display: none;">{{ product.size }} </h6>
+                <h6 class="pd-price font-weight-bold my-2">{{ product.price }}</h6>  <h6 class="font-weight-bold mx-1 my-2"> Birr</h6>&nbsp;&nbsp;&nbsp;
+                <button id="{{ product.id }}" type="button" class="pd-id btn btn-sm btn-primary " name="button" onclick="addToCart(this.id)"><small class="font-weight-bold">Add to cart </small><i class="fa fa-cart-plus fa-sm"></i></button>
+              </div> 
+            </div>          
+          </div>
+        </li>
+      </ul>
+    {% endfor %}
+  </div>
+  <div id="watch-more" class="d-flex justify-content-center mt-2">
+    {% if watchmore != '' %}
+      <button class="btn btn-light" value="{{ watchmore }}" onclick="watchMore(this.value)">Watch more</button>
+    {% endif %}
+  </div>
+  
+</div>
+{% endblock %}
